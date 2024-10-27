@@ -18,6 +18,7 @@ export default defineConfig({
       '@assets': '/src/assets',
       '@styles': '/src/styles',
       '@api': '/src/api',
+      '@utils': '/src/utils',
     },
   },
 });

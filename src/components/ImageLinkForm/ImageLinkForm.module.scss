@@ -1,0 +1,54 @@
+.imageLinkFormWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.description {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.inputWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.input {
+  width: 100%;
+  max-width: 500px;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 0.25rem;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.input:hover,
+.input:focus {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.button {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #000;
+  border-radius: 0.25rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .input {
+    max-width: 100%;
+  }
+
+  .inputWrapper {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+}

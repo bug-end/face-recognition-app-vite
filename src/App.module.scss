@@ -1,0 +1,27 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.headingWrapper {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+}
+
+@media (max-width: 768px) {
+  .headingWrapper {
+    flex-direction: column;
+    padding: 3rem 0 1rem;
+  }
+}
