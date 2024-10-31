@@ -24,9 +24,8 @@ export const Register: React.FC<RegisterProps> = ({ onRouteChange, loadUser }) =
     setName(event.target.value);
   };
 
-  // TODO add type
   const onSubmitRegister = () => {
-    registerUser(email, password, name).then((user: any) => {
+    registerUser(email, password, name).then((user) => {
       if (user.id) {
         loadUser(user);
         onRouteChange('home');

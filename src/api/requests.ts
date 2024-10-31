@@ -1,10 +1,12 @@
-const apiUrl = import.meta.env.REACT_APP_API_URL;
+import { User } from '@utils/types/user';
+
+const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 
 export const checkServerStatus = () => {
   return fetch(`${apiUrl}/`).then((response) => response.text());
 };
 
-export const registerUser = (email: string, password: string, name: string) => {
+export const registerUser = (email: string, password: string, name: string): Promise<User> => {
   return fetch(`${apiUrl}/register`, {
     method: 'post',
     headers: {
@@ -18,7 +20,7 @@ export const registerUser = (email: string, password: string, name: string) => {
   }).then((response) => response.json());
 };
 
-export const signIn = (email: string, password: string) => {
+export const signIn = (email: string, password: string): Promise<User> => {
   return fetch(`${apiUrl}/signin`, {
     method: 'post',
     headers: {

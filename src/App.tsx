@@ -1,24 +1,25 @@
 import { useState } from 'react';
 
-import { Navigation } from './components/Navigation/Navigation';
-import { FaceRecognition } from './components/FaceRecognition/FaceRecognition';
-import { ImageLinkForm } from './components/ImageLinkForm/ImageLinkForm';
-import { Rank } from './components/Rank/Rank';
-import { Signin } from './components/Signin/Signin';
-import { Register } from './components/Register/Register';
-import { PageRow } from './components/PageRow/PageRow';
+import { Navigation } from '@components/Navigation/Navigation';
+import { FaceRecognition } from '@components/FaceRecognition/FaceRecognition';
+import { ImageLinkForm } from '@components/ImageLinkForm/ImageLinkForm';
+import { Rank } from '@components/Rank/Rank';
+import { Signin } from '@components/Signin/Signin';
+import { Register } from '@components/Register/Register';
+import { PageRow } from '@components/PageRow/PageRow';
 
-import { detectFace, updateEntries } from './api/requests';
+import { detectFace, updateEntries } from '@api/requests';
 
 import styles from './App.module.scss';
+import { User } from '@utils/types/user';
 
 export const App = () => {
-  const [imageUrlResponse, setImageUrlResponse] = useState('');
-  const [input, setInput] = useState('');
+  const [imageUrlResponse, setImageUrlResponse] = useState<string>('');
+  const [input, setInput] = useState<string>('');
   const [box, setBox] = useState([]);
-  const [route, setRoute] = useState('signin');
-  const [isSignedIn, setIsSignedIn] = useState(false);
-  const [user, setUser] = useState({
+  const [route, setRoute] = useState<string>('signin');
+  const [isSignedIn, setIsSignedIn] = useState<boolean>(false);
+  const [user, setUser] = useState<User>({
     id: '',
     name: '',
     email: '',
@@ -41,7 +42,7 @@ export const App = () => {
     });
   };
 
-  const handleLoadUser = (data: any) => {
+  const handleLoadUser = (data: User) => {
     setUser({
       id: data.id,
       name: data.name,

@@ -1,4 +1,6 @@
+import { User } from '@utils/types/user';
+
 export interface RegisterProps {
   onRouteChange: (route: string) => void;
-  loadUser: (user: any) => void; // TODO add type
+  loadUser: (user: User) => void;
 }
